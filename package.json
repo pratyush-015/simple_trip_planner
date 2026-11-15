@@ -1,0 +1,28 @@
+{
+  "name": "trip-planner",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AI trip planner: turns a free-form trip description into an interactive, editable itinerary.",
+  "scripts": {
+    "start": "concurrently -k -n api,web -c blue,green \"npm:server\" \"npm:client\"",
+    "dev": "npm start",
+    "server": "node server/index.js",
+    "client": "vite",
+    "build": "vite build",
+    "serve": "npm run build && node server/index.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "concurrently": "^8.2.2",
+    "vite": "^5.4.2"
+  },
+  "engines": { "node": ">=18" }
+}
