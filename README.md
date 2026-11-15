@@ -8,13 +8,13 @@ Requires Node 18+.
 
 ```bash
 git clone (https://github.com/pratyush-015/simple_trip_planner.git) && cd trip-planner
-cp .env.example .env        # then put API key in .env
+cp .env.example .env        #put API key in .env
 npm install && npm start
 ```
 
-Open http://localhost:5173. `npm start` runs the Vite dev server (port 5173) and the small Express backend (port 8787) together; Vite proxies `/api` to the backend.
+http://localhost:5173. `npm start` runs the Vite dev server (port 5173) and the small Express backend (port 8787) together; Vite proxies `/api` to the backend.
 
-**Getting a key:** the default is Groq's free tier (https://console.groq.com). Any OpenAI-compatible provider works by changing three env vars in `.env` (OpenRouter, OpenAI, Gemini, or a local Ollama, which needs no key). See `.env.example`.
+**Getting a key:** the default is Groq's free tier (https://console.groq.com). Any OpenAI-compatible provider works by changing three env vars in `.env` 
 
 | Command | What it does |
 | --- | --- |
@@ -25,7 +25,6 @@ Open http://localhost:5173. `npm start` runs the Vite dev server (port 5173) and
 
 ### Deploying
 - **Vercel:** import the repo. `api/itinerary.js` is picked up as a serverless function and Vite as the frontend. Add `LLM_API_KEY` (and optionally `LLM_BASE_URL`, `LLM_MODEL`) in Project Settings, Environment Variables.
-- **Render/Railway/any Node host:** build command `npm install && npm run build`, start command `node server/index.js`, plus the env vars.
 
 ## How it works
 
